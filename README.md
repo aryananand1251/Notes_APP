@@ -1,7 +1,7 @@
 This application is developed using 
 Language: Java || for UI:XML.
 Developer Tools: Android Studio
-Database: Room Database Using SQL Query Lnaguage
+Database: Room Database Using SQL Query Language
 
 
 Features added in the application:
