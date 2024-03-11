@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav"
+        android:id="@+id/navigationBar">
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
         <androidx.appcompat.widget.SearchView
@@ -23,13 +40,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginBottom="8dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -47,8 +64,10 @@
             android:src="@drawable/baseline_add_24" />
 
     </RelativeLayout>
+
+
     
 
    
 
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
