@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.notes.Models.Notes;
@@ -18,7 +19,7 @@ import java.util.Date;
 public class NotesTaker extends AppCompatActivity {
 
     EditText editText_title,editText_notes;
-    ImageView imageView_save;
+    TextView imageView_save;
     Notes notes;
     boolean isOldNote=false;
 
