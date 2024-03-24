@@ -3,11 +3,15 @@ package com.example.notes;
 import static java.util.Locale.filter;
 
 import androidx.activity.result.ActivityResult;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -23,11 +27,12 @@ import com.example.notes.Adapter.NotesAdapter;
 import com.example.notes.Database.RoomDB;
 import com.example.notes.Models.Notes;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener, NavigationView.OnNavigationItemSelectedListener{
 
     RecyclerView recyclerView;
     NotesAdapter notesAdapter;
@@ -37,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     SearchView searchView_home;
     Notes selectedNote;
+    DrawerLayout drawerLayout;
+    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,5 +183,21 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int itemId=item.getItemId();
 
+        return false;
     }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START))
+        {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+}
